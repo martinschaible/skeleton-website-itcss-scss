@@ -12,14 +12,4 @@
 
 h1 {
     font-family: 'Righteous';
-    color: var(--#{$prefix}theme-logo-blue-light);
-}
-
-h2, h3, h4, h5, h6 {
-    font-weight: bold;
-}
-
-ul {
-    list-style: disc;
-    list-style-position: inside;
 }
