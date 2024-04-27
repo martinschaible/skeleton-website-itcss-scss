@@ -98,7 +98,7 @@ This installation can be repeated anytime by deleting the folder `node_modules` 
 
 ## Installation Bootstrap
 * Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/). We need the *Source files*.
-* Create the folder `src/vendor/bootstrap`.
+* Create the folder `src/vendor/bootstrap/scss`.
 * Unzip only the content of the folder `bootstrap-5.3.3/scss` of the zip file in this folder.
 * Get the zip file from [Github - twbs/icons](https://github.com/twbs/icons/).
 * Create the folder `src/vendor/bootstrap.icons`.
