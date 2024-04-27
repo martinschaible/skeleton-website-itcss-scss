@@ -4,7 +4,7 @@ A clean skeleton for developing websites
 ## Features
 
 * A finely-tuned theme or template.
-* Build with **Bootstrap 5.3.3** and **Font Awesome 6.5.2**.
+* Build with **Bootstrap 5.3.3**, **Bootstrap Icons 1.11.3** or **Font Awesome 6.5.2**.
 * We use **SASS**.
 * Very small footprint of the compiled css and js files. 
 * Fully modular. Easy to maintain by using **ITCSS**
@@ -96,10 +96,10 @@ npm install
 The folder `node_modules` will be created and about 41 MB of stuff will be downloaded and stored.
 This installation can be repeated anytime by deleting the folder `node_modules` and running the installation again.
 
-## Installation Bootstrap and Bootstrap fonts
+## Installation Bootstrap
 * Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/). We need the *Source files*.
 * Create the folder `src/vendor/bootstrap`.
-* Unzip the content of the folder `bootstrap-5.3.3` of the zip file in this folder.
+* Unzip only the content of the folder `bootstrap-5.3.3/scss` of the zip file in this folder.
 * Get the zip file from [Github - twbs/icons](https://github.com/twbs/icons/).
 * Create the folder `src/vendor/bootstrap.icons`.
 * Unzip the content of the folder `icons-main` of the zip file in this folder.
@@ -217,9 +217,11 @@ This is the directory structure of the project:
           |        |- tests
           |        |- utilities
           |        |- vendor
-          |- bootstrap.icons
-          |- fontawesome
+          |- bootstrap.icons *
+          |- fontawesome *
 ```
+
+\* Not needed. We use the font files or the svg sprites.
 
 ## Links
 
@@ -227,8 +229,12 @@ Node.js:
 * [Node.js's Website](https://nodejs.org/en/)  
 * [npm's Website](https://www.npmjs.com/)  
 
-Bootstrap 5.3.0 documentation:
-* [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+Bootstrap:
+* [Bootstrap 5.3 Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+* [Bootstrap Icons](https://icons.getbootstrap.com)
+
+Font Awesome:
+* [Font Awesome Free](https://fontawesome.com/start)
 
 SASS/SCSS:
 * [Sass Guidelines](http://sass-guidelin.es)
