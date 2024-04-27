@@ -1,0 +1,17 @@
+/// ============================================================================
+/// Self-Host Google Font "Source Sans 3"
+/// 
+/// Supported font weights: 400 (Normal), 700 (Bold)
+/// Supported font styles: normal and italic
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @link https://gwfh.mranftl.com/fonts/source-sans-3?subsets=latin
+/// @name _settings.font.google.source-sans-3.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+@include font('Source Sans 3', '../fonts/source-sans-3-v15-latin-regular', '400', 'normal');
+@include font('Source Sans 3', '../fonts/source-sans-3-v15-latin-italic', '400', 'italic');
+@include font('Source Sans 3', '../fonts/source-sans-3-v15-latin-700', '700', 'normal');

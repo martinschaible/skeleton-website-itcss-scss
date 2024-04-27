@@ -1,0 +1,17 @@
+// ============================================================================
+/// Self-Host Google Font "Noto Sans"
+/// 
+/// Supported font weights: 400 (Normal), 700 (Bold)
+/// Supported font styles: normal and italic
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @link https://gwfh.mranftl.com/fonts/noto-sans?subsets=latin
+/// @name _settings.font.google.noto-sans.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+@include font('Noto Sans', '../fonts/noto-sans-v36-latin-regular', '400', 'normal');
+@include font('Noto Sans', '../fonts/noto-sans-v36-latin-italic', '400', 'italic');
+@include font('Noto Sans', '../fonts/noto-sans-v36-latin-700', '700', 'normal');

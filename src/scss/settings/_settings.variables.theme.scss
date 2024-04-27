@@ -1,0 +1,36 @@
+/// ============================================================================
+/// Settings for typograpy for the default theme
+/// 
+/// This generates a map of variables
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _settings.variables.theme.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+
+// Additional colors (theme, corporate identity)
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/customize/sass/
+
+$theme-logo-blue:       #415ea4;
+$theme-logo-blue-light: #778bbd;
+$theme-logo-grey:       #747476;
+$theme-logo-black:      #252525;
+$theme-red:             #ef5874; /* Used for Headings*/
+$theme-yellow:          #ECB545;
+
+// Create a custom map
+$theme-colors: (
+    "theme-logo-blue":          $theme-logo-blue,
+    "theme-logo-blue-light":    $theme-logo-blue-light,
+    "theme-logo-grey":          $theme-logo-grey,
+    "theme-logo-black":         $theme-logo-black,
+    "theme-red":                $theme-red,
+    "theme-yellow":             $theme-yellow
+);
+
+// Merge the custom map into the big map from bootstrap
+$theme-colors: map-merge($theme-colors, $theme-colors);

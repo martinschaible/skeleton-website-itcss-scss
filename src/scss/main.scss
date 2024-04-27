@@ -1,0 +1,203 @@
+/// ============================================================================
+/// Import the SCSS files of the framework and the project
+/// 
+/// Only @import's here!
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name main.scss
+/// @group core
+/// @since 27.04.24
+/// ============================================================================
+
+
+// Part 1 - Configuration
+// =============================================================================
+@charset 'UTF-8';
+
+// Bootstrap functions and variables first
+@import '../vendor/bootstrap/scss/functions';
+
+@import '../vendor/bootstrap/scss/variables';
+@import '../vendor/bootstrap/scss/variables-dark';
+
+
+// Tools and mixins
+// -----------------------------------------------------------------------------
+// -> Globally used mixins and functions.
+//    It’s important not to output any CSS in the first 2 layers.
+
+@import 'tools/tools.mixins.functions';
+@import 'tools/tools.mixins.colors';
+@import 'tools/tools.mixins.grid';
+@import 'tools/tools.mixins.layout';
+
+// Settings
+// -----------------------------------------------------------------------------
+
+// Extend settings from Bootstrap
+@import 'settings/settings.variables.bootstrap';
+@import 'settings/settings.variables.bootstrap-dark';
+
+// Settings - Project related
+@import 'settings/settings.variables';
+
+// Settings - Theme related
+// -----------------------------------------------------------------------------
+@import 'settings/settings.variables.theme';
+@import 'settings/settings.variables.theme.dark';
+
+// Settings - Self-Host Fonts
+@import 'settings/settings.font.google.righteous';
+@import 'settings/settings.font.google.open-sans';
+
+// Settings - Self-Host Icons
+@import 'settings/settings.font.bootstrap.icons';
+
+//
+//
+//
+
+// Part 2 - Bootstrap - Import Framework
+// =============================================================================
+// 
+// -> https://getbootstrap.com/docs/5.3/customize/sass/
+//
+
+// Display the banner at the top of the css file
+@import "../vendor/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+
+// Configuration 
+// -----------------------------------------------------------------------------
+
+@import '../vendor/bootstrap/scss/maps';
+@import '../vendor/bootstrap/scss/mixins';
+@import '../vendor/bootstrap/scss/utilities';
+
+// Create CSS Custom Properties
+// -----------------------------------------------------------------------------
+//@import 'settings/settings.root.theme.default';
+//@import 'settings/settings.root.theme.dark';
+
+// Layout & Components
+// -----------------------------------------------------------------------------
+// -> Only mandatory parts are enabled
+
+@import '../vendor/bootstrap/scss/root';
+
+@import '../vendor/bootstrap/scss/reboot';
+@import '../vendor/bootstrap/scss/type';
+@import '../vendor/bootstrap/scss/images';
+@import '../vendor/bootstrap/scss/containers';  // $enable-container-classes (true|false)
+@import '../vendor/bootstrap/scss/grid';        // $enable-grid-classes (true|false)
+
+// -> Optional Components
+
+//@import '../vendor/bootstrap/scss/tables';
+//@import '../vendor/bootstrap/scss/forms';
+@import '../vendor/bootstrap/scss/buttons';
+@import '../vendor/bootstrap/scss/transitions';
+@import '../vendor/bootstrap/scss/dropdown';
+//@import '../vendor/bootstrap/scss/button-group';
+@import '../vendor/bootstrap/scss/nav';
+@import '../vendor/bootstrap/scss/navbar';
+@import '../vendor/bootstrap/scss/card';
+@import '../vendor/bootstrap/scss/accordion';
+//@import '../vendor/bootstrap/scss/breadcrumb';
+//@import '../vendor/bootstrap/scss/pagination';
+//@import '../vendor/bootstrap/scss/badge';
+//@import '../vendor/bootstrap/scss/alert';
+//@import '../vendor/bootstrap/scss/progress';
+//@import '../vendor/bootstrap/scss/list-group';
+//@import '../vendor/bootstrap/scss/close';
+//@import '../vendor/bootstrap/scss/toasts';
+//@import '../vendor/bootstrap/scss/modal';
+//@import '../vendor/bootstrap/scss/tooltip';
+//@import '../vendor/bootstrap/scss/popover';
+//@import '../vendor/bootstrap/scss/carousel';
+//@import '../vendor/bootstrap/scss/spinners';
+//@import '../vendor/bootstrap/scss/offcanvas';
+//@import '../vendor/bootstrap/scss/placeholders';
+
+// Helpers
+// -----------------------------------------------------------------------------
+@import '../vendor/bootstrap/scss/helpers';
+
+// Utilities API
+// -----------------------------------------------------------------------------
+// Generate classes based on the Sass map in `_utilities.scss`
+// -> https://getbootstrap.com/docs/5.0/utilities/api/
+
+// This helper classes will be removed as soon as we created our own classes
+@import "../vendor/bootstrap/scss/utilities/api"; 
+
+//
+//
+//
+
+// Part 4 - ITCSS port - II
+// =============================================================================
+// -> https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+
+// Generic
+// -----------------------------------------------------------------------------
+// -> Reset and/or normalize styles, box-sizing definition, etc.
+//    This is the first layer which generates actual CSS.
+// ** Remains unused by using Bootstrap **
+
+// Elements
+// -----------------------------------------------------------------------------
+// -> Styling for bare HTML elements (like H1, A, etc.)
+//    This is the first layer which generates actual CSS.
+
+// Typography
+@import 'elements/elements.typography';
+
+
+// Objects
+// -----------------------------------------------------------------------------
+// -> Class-based selectors which define undecorated design patterns
+
+@import 'objects/objects.regions';
+
+@import 'objects/objects.regions.container';
+@import 'objects/objects.regions.grid';
+
+@import 'objects/objects.region.header';
+@import 'objects/objects.region.navigation';
+@import 'objects/objects.region.main';
+@import 'objects/objects.region.footer';
+
+
+// Components
+// -----------------------------------------------------------------------------
+// -> specific designed UI components.
+//    This is where most of our work takes place.
+//    We often compose UI components of Objects and Components
+
+@import 'components/components.page';
+@import 'components/components.regions';
+
+@import 'components/components.region.header';
+@import 'components/components.region.navigation';
+@import 'components/components.region.main';
+@import 'components/components.region.footer';
+
+@import 'components/components.utilities';
+
+
+// Utilities
+// -----------------------------------------------------------------------------
+// -> Utilities and helper classes with ability to override anything
+//    which goes before in the triangle, e.g. hide helper class.
+
+@import 'utilities/utilities';
+
+// -> Use this for temporary and bad stuff!
+@import 'utilities/badstuff';
+
+
+// Importing CSS files
+// -----------------------------------------------------------------------------
+// -> Import here your 3rd party css files

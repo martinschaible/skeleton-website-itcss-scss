@@ -1,0 +1,15 @@
+/// ============================================================================
+/// Self-Host Bootstrap Icons
+/// 
+/// Supported font weights: 400 (Normal))
+/// Supported font styles: normal
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @link https://icons.getbootstrap.com
+/// @name _settings.font.bootstrap.icons.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+@include font('bootstrap-icons', '../fonts/bootstrap-icons', '400', 'normal');

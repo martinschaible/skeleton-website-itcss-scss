@@ -1,0 +1,30 @@
+/// ============================================================================
+/// Generic functions
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _tools.mixins.functions.scss
+/// @group tools
+/// @since 27.04.24
+/// ============================================================================
+
+// https://gwfh.mranftl.com/fonts
+
+// $fontFamily: Name of the font, eg.Lato
+// $fontFile: Realtive path to the font file including the file
+// $fontWeight: 300, 700
+// $fontStyle: normal, italic
+@mixin font($fontFamily, $fontFile, $fontWeight, $fontStyle) {
+    @font-face {
+      font-display: swap;
+      font-family: $fontFamily;
+      font-style: unquote($fontStyle);
+      font-weight: unquote($fontWeight);
+      src: url($fontFile+'.eot');
+      src: url($fontFile+'.eot?#iefix') format('embedded-opentype'),
+           url($fontFile+'.woff2') format('woff2'),
+           url($fontFile+'.woff') format('woff'),
+           url($fontFile+'.ttf') format('truetype'),
+           url($fontFile+'.svg#'+$fontFamily) format('svg');
+    }
+  }

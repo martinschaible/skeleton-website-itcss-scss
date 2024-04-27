@@ -1,0 +1,17 @@
+// ============================================================================
+/// Self-Host Google Font "Open Sans"
+/// 
+/// Supported font weights: 400 (Normal), 700 (Bold)
+/// Supported font styles: normal and italic
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @link https://gwfh.mranftl.com/fonts/open-sans?subsets=latin
+/// @name _settings.font.google.open-sans.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+@include font('Open Sans', '../fonts/open-sans-v40-latin-regular', '400', 'normal');
+@include font('Open Sans', '../fonts/open-sans-v40-latin-italic', '400', 'italic');
+@include font('Open Sans', '../fonts/open-sans-v40-latin-700', '700', 'normal');

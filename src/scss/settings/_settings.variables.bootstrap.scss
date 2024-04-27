@@ -1,0 +1,276 @@
+/// ============================================================================
+/// Global variables for Bootstrap
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _settings.variables.bootstrap.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+
+// =============================================================================
+// .:. Extends the file vendor/bootstrap/_variables.scss
+// =============================================================================
+
+// All bootstrap variables are declared with !default.
+//
+// From Sass reference:
+// You can assign to variables if they aren’t already assigned by adding the !default flag to the end of the value.
+// This means that if the variable has already been assigned to, it won’t be re-assigned,
+// but if it doesn’t have a value yet, it will be given one.
+
+// Color system 
+// -----------------------------------------------------------------------------
+
+
+// Options
+// -----------------------------------------------------------------------------
+// Quickly modify global styling by enabling or disabling optional features.
+// -> https://getbootstrap.com/docs/5.3/customize/options/
+// 
+
+$enable-dark-mode:            false;
+$enable-rounded:              true;
+$enable-shadows:              false;
+$enable-gradients:            false;
+$enable-transitions:          true;
+$enable-reduced-motion:       true;
+$enable-grid-classes:         true;
+$enable-container-classes:    true;
+$enable-caret:                true;
+$enable-button-pointers:      true;
+$enable-rfs:                  true;
+$enable-validation-icons:     true;
+$enable-negative-margins:     false;
+$enable-deprecation-messages: true;
+$enable-important-utilities:  true; 
+$enable-smooth-scroll:        true;
+
+$color-mode-type:             data;
+
+
+// Gradient
+// -----------------------------------------------------------------------------
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+
+
+// Spacing
+// -----------------------------------------------------------------------------
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation. 
+
+// Body
+// -----------------------------------------------------------------------------
+// Settings for the `<body>` element.
+
+//$body-bg:                       #{var(--base-bg-color)};
+//$body-color:                    #{var(--base-text-color)};
+
+
+// Links
+// -----------------------------------------------------------------------------
+// Style anchor elements.
+//$link-color:                    #{var(--link-text-color)};
+//$link-hover-color:              #{var(--link-hover-color)};
+
+
+// Paragraphs
+// -----------------------------------------------------------------------------
+// Style p element.
+
+
+// Grid breakpoints
+// -----------------------------------------------------------------------------
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries. 
+
+
+// Grid containers 
+// -----------------------------------------------------------------------------
+// Define the maximum width of `.container` for different screen sizes.
+ 
+
+// Grid columns
+// -----------------------------------------------------------------------------
+// Set the number of columns and specify the width of the gutters.
+
+
+// Components
+// -----------------------------------------------------------------------------
+// Define common padding and border radius sizes and more. 
+
+
+// Typography
+// -----------------------------------------------------------------------------
+// Font, line-height, and color for body text, headings, and more.
+
+// -> The typography is handled in these files:
+//
+// _settings.typography.theme.scss
+
+$font-family-sans-serif:        unquote("\"Open Sans\", " + $font-family-sans-serif);
+
+//$font-family-base:            #{var(--base-font-family-sans-serif)};
+//$font-family-code:            var(--bs-font-monospace);
+
+// Goes to CSS Custom Property: "--base-text-size"
+$font-size-base:                1.1rem;
+
+// Used to calculate, bad!
+//$font-size-lg:                #{var(--text-size-lg)};
+//$font-size-sm:                #{var(--text-size-sm)};
+
+//$font-weight-base:            #{var(--base-font-weight)};
+
+// Goes to CSS Custom Property: "--base-line-height"
+$line-height-base:              1.55;
+
+// Reduce the size at least 0.5rem
+$h1-font-size:                  $font-size-base * 1.7;
+$h2-font-size:                  $font-size-base * 1.5;
+$h3-font-size:                  $font-size-base * 1.25;
+$h4-font-size:                  $font-size-base * 1.15;
+$h5-font-size:                  $font-size-base;
+$h6-font-size:                  $font-size-base;
+
+// Double size margin 
+//$headings-margin-bottom:      $spacer;
+
+//$headings-font-family:        Roboto; 
+//$headings-font-weight:        #{var(--headings-font-weight)};
+//$headings-line-height:        #{var(--headings-line-height)};
+//$headings-color:              #{var(--headings-text-color)};
+
+// Optional Components
+// =============================================================================
+
+// Tables
+// -----------------------------------------------------------------------------
+// Customizes the `.table` component with basic values, each used across all table variations.
+
+// -> I don't use tables, yak.
+
+// Forms
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/forms/overview/
+
+// Nav
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/navs-tabs/
+
+// Navbar
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/navbar/
+
+// Cards
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/card/
+
+// Accordion
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/accordion/
+
+$accordion-padding-y:                     1rem;
+$accordion-padding-x:                     1.25rem;
+$accordion-color:                         var(--#{$prefix}body-color);
+$accordion-bg:                            var(--#{$prefix}body-bg);
+$accordion-border-width:                  var(--#{$prefix}border-width);
+$accordion-border-color:                  var(--#{$prefix}border-color);
+$accordion-border-radius:                 var(--#{$prefix}border-radius);
+$accordion-inner-border-radius:           subtract($accordion-border-radius, $accordion-border-width);
+
+$accordion-body-padding-y:                $accordion-padding-y;
+$accordion-body-padding-x:                $accordion-padding-x;
+
+$accordion-button-padding-y:              $accordion-padding-y;
+$accordion-button-padding-x:              $accordion-padding-x;
+$accordion-button-color:                  var(--#{$prefix}body-color);
+$accordion-button-bg:                     var(--#{$prefix}accordion-bg);
+$accordion-transition:                    $btn-transition, border-radius .15s ease;
+$accordion-button-active-bg:              var(--#{$prefix}primary-bg-subtle);
+$accordion-button-active-color:           var(--#{$prefix}primary-text-emphasis);
+
+$accordion-button-focus-border-color:     $input-focus-border-color;
+$accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
+
+$accordion-icon-width:                    1.25rem ;
+$accordion-icon-color:                    $body-color;
+$accordion-icon-active-color:             $primary-text-emphasis;
+$accordion-icon-transition:               transform .2s ease-in-out;
+$accordion-icon-transform:                rotate(-180deg);
+
+$accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+
+// Breadcrumb
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/breadcrumb/
+
+// Pagination
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/pagination/
+
+// Badges
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/badge/
+
+// Alerts
+// -----------------------------------------------------------------------------
+// Define alert colors, border radius, and padding.
+
+// Progress bars
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/progress/
+
+// List group 
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/list-group/
+
+// Close 
+// -----------------------------------------------------------------------------
+// -> 
+
+
+// Toasts 
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/toasts/
+
+
+// Modals
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/modal/
+
+
+// Tooltips
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/tooltips/
+
+
+// Popovers
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/popovers/
+
+
+// Carousel
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/carousel/
+
+
+// Spinners
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/spinners/
+
+
+// Offcanvas
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/offcanvas/
+
+
+// Placeholders
+// -----------------------------------------------------------------------------
+// -> https://getbootstrap.com/docs/5.3/components/placeholders/
+

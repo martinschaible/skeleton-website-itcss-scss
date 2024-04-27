@@ -1,0 +1,29 @@
+# Tutorial .gitignore
+# https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+# ------------------------------------------------------------------------------
+
+# Ignore files
+**/thumbs.db
+**/.DS_Store
+package-lock.json
+
+# Ignore folders
+.cache/
+node_modules/
+
+# Ignore the sources from 3rd party vendors
+dist/assets/fonts
+src/vendor/bootstrap
+src/vendor/bootstrap.icons
+src/vendor/fontawesome
+
+# Ignore compiled files
+#dist/assets/css/main.min.css
+dist/assets/css/main.min.css.map
+
+#dist/assets/js/bootstrap.bundle.min.js
+dist/assets/js/bootstrap.bundle.min.js.map
+
+# Ignore settings from Visual Studio Code
+/vsc.code-workspace
+/.vscode/

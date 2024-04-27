@@ -1,0 +1,49 @@
+/// ============================================================================
+/// UI Components for the page
+///
+/// Basic styling instructions for the "page" without going in to deeper nested
+/// objects.
+/// If the framework delivers already cool stuff, this file may remain empty.
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _components.page.scss
+/// @group components
+/// @since 27.04.24
+/// ============================================================================
+
+// Bootstrap icons
+// -----------------------------------------------------------------------------
+// -> We do not use the big original file 'bootstrap-icons.scss'
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Create only the icons we need
+$bootstrap-icons-map: (
+    "arrow-up": "\f148",
+    "envelope-fill": "\f32c",
+    "facebook": "\f344",
+    "geo-alt-fill": "\f3e7",
+    "instagram": "\f437",
+    "list": "\f479",
+    "phone-fill": "\f4e2",
+    "youtube": "\f62b",
+);
+
+@each $icon, $codepoint in $bootstrap-icons-map {
+    .bi-#{$icon}::before { content: $codepoint; }
+}
+

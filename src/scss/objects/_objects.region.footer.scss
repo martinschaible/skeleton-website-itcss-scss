@@ -1,0 +1,25 @@
+/// ============================================================================
+/// Objects for the region "footer"
+/// 
+/// Specific design patterns for the footer part of the page
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _objects.region.footer.scss
+/// @group objects
+/// @since 27.04.24
+/// ============================================================================
+
+.footer {
+    font-size: 1rem;   
+
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    /*background-color: #232325;*/
+}
+
+.nav-link {
+    &__color {
+        color: var(--#{$prefix}bs-body-color);
+    }
+}

@@ -1,0 +1,15 @@
+/// ============================================================================
+/// Self-Host Google Font "Righteous"
+/// 
+/// Supported font weights: 400 (Normal)
+/// Supported font styles: normal
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @link https://gwfh.mranftl.com/fonts/righteous?subsets=latin
+/// @name _settings.font.google.righteous.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+@include font('Righteous', '../fonts/righteous-v17-latin-regular', '400', 'normal');

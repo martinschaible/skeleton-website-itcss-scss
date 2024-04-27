@@ -1,0 +1,69 @@
+/// ============================================================================
+/// Global variables
+/// ----------------------------------------------------------------------------
+/// @access public
+/// @author Martin Schaible
+/// @name _settings.variables.scss
+/// @group settings
+/// @since 27.04.24
+/// ============================================================================
+
+
+/// ============================================================================
+/// -> Use BEM for naming variables:
+///
+/// $block-name_modifier-name
+/// $block-name__element-name
+/// $block-name__element-name_modifier-name
+/// $block-name__element-name_modifier-name_modifier_value
+///
+/// block-name — a block name. The field is required because only a block exists as an independent BEM entity
+/// element-name — an element name
+/// modifier-name — a modifier name
+/// modifier_value — a modifier value
+///
+/// -> Naming conventions: https://en.bem.info/method/naming-convention/
+/// ============================================================================
+
+
+// Part 1 - Settings -> Global variables, config switches
+// =============================================================================
+
+// Site, design and layout specific
+// -----------------------------------------------------------------------------
+
+// Part 2 - Elements
+// =============================================================================
+
+// Fonts
+// -----------------------------------------------------------------------------
+
+
+// Part 3 - Objects -> Cosmetic-free design patterns
+// =============================================================================
+
+// Grid and Columns
+// -----------------------------------------------------------------------------
+// -> objects/_objects.regions.grid.scss
+
+// Main navigation
+// -----------------------------------------------------------------------------
+// -> objects/_objects.region.navigation.scss
+
+
+// Part 4 - Components -> Designed components, chunks of UI.
+// =============================================================================
+
+// Main navigation
+// -----------------------------------------------------------------------------
+// -> components/_components.region.navigation.scss
+
+
+// Part 5 - Utilities
+// =============================================================================
+// -> components/_components.utilities.scss
+
+
+// Part 6 - Trumps -> Helpers and overrides
+// =============================================================================
+// -> trumps/_trumps.scss
