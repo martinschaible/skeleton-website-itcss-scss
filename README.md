@@ -1,4 +1,4 @@
-# skeleton.project.itcss.scss
+# Skeleton for developing websites
 A clean skeleton for developing websites
 
 ## Features
