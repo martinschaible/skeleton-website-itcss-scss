@@ -19,6 +19,8 @@ src/vendor/fontawesome
 
 # Ignore compiled files
 #dist/assets/css/main.min.css
+
+dist/assets/css/main.css.map
 dist/assets/css/main.min.css.map
 
 #dist/assets/js/bootstrap.bundle.min.js
