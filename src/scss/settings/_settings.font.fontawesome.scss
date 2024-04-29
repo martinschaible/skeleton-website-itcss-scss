@@ -1,15 +1,15 @@
 /// ============================================================================
-/// Self-Host Bootstrap Icons
+/// Self-Host Fontawesome
 /// 
 /// Supported font weights: 400 (Normal)
 /// Supported font styles: normal
 /// ----------------------------------------------------------------------------
 /// @access public
 /// @author Martin Schaible
-/// @link https://icons.getbootstrap.com
-/// @name _settings.font.bootstrap.icons.scss
+/// @link https://fontawesome.com/start
+/// @name _settings.font.bootstrap.scss
 /// @group settings
 /// @since 27.04.24
 /// ============================================================================
 
-@include font('bootstrap-icons', '../fonts/bootstrap-icons', '400', 'normal');
+@include font('Font Awesome 6 Free', '../fonts/fa-brands-400', '400', 'normal');
