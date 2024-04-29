@@ -17,13 +17,52 @@ A development environment is needed for:
 * Minifying the CSS and Javascript files
 * Optimizing
 
-First a bunch of software needs to be installed on your PC.
+## Creating the directory structure of the project
+For your convenience, i created the batch file `create-folders.cmd` which creates the whole structure.
+Run the batch in **the root folder of your project**.
+This is the directory structure of the project:
+
+```
+|- build
+│- dist
+|    |- assets
+|    |    |- css
+|    |    |- fonts
+|    |    |- images
+|    |    |    |- favicon
+|    |    |- js
+|- node_modules
+|- src
+     |- scss
+     |    |- components
+     |    |- elements
+     |    |- generic
+     |    |- objects
+     |    |- settings
+     |    |- tools
+     |    |- utilities
+     |- vendor
+          |- bootstrap
+          |   |- build
+          |   |- dist
+          |   |- js
+          |   |- scss
+          |        |- forms
+          |        |- helpers
+          |        |- mixins
+          |        |- tests
+          |        |- utilities
+          |        |- vendor
+          |- bootstrap.icons *
+          |- fontawesome *
+```
 
 ### Installation Node.js
+A bunch of software needs to be installed on your PC.
 
 * Get Node.js from [Here](https://nodejs.org/en/).
 * Choose the latest **LTS** version (Version 20.12.2 in may 2024).
-* Store the downloaded files to a temporary location.
+* Store the downloaded file to a temporary location.
 * Run the installer of Node.js. Accept the default settings and click to OK as many as they ask for.
 * Open a command prompt (That's cmd.exe) and type **path**.
 * Be sure, that Node.js has a path to it's binaries, eg. `C:\Program Files\nodejs`.
@@ -38,7 +77,7 @@ Node.js installed **npm**, which is a package manager. **npm** allows us to down
 
 ### List of the packages
 
-The list which packages are needed is stored in the package file `package.json`. This file is located in the root directory of the project:  
+A list which packages are needed. This is stored in the package file `package.json`. This file is located in the **root directory of your project**:  
 
 ```json
   "devDependencies": {
@@ -85,7 +124,7 @@ Details of the packages can be found here:
 ### Installation of the packages
 Our environment is almost ready to use. Finally the packages needs to be installed.
 Let's do this by opening a _Command Prompt_.
-It is important, that the following command **must be executed from the location** where the file `package.json` is stored.
+It is important, that the following command **must be executed from the location** where the file `package.json` is stored. Again, this is the **root folder of your project**.
 
 **npm** is our package manager. The installation starts with this command:
 
@@ -96,20 +135,82 @@ npm install
 The folder `node_modules` will be created and about 41 MB of stuff will be downloaded and stored.
 This installation can be repeated anytime by deleting the folder `node_modules` and running the installation again.
 
+
 ## Installation Bootstrap
-* Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/). We need the *Source files*.
-* Create the folder `src/vendor/bootstrap/scss`.
-* Unzip only the content of the folder `bootstrap-5.3.3/scss` of the zip file in this folder.
-* Get the zip file from [Github - twbs/icons](https://github.com/twbs/icons/).
-* Create the folder `src/vendor/bootstrap.icons`.
-* Unzip the content of the folder `icons-main` of the zip file in this folder.
 
-> **We never ever touch these files. They must remain intact in it's original state**
+Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/). We need the *Source files*.
 
-## Getting Started
+```
+│- bootstrap-5.3.3
+     |- build
+     |- dist
+     |-- js
+     |    |- dist
+     |    |- src
+     |    |- tests
+     |- nuget
+     |- scss
+     |    |- forms
+     |    |- helpers
+     |    |- mixins
+     |    |- tests
+     |    |- utilities
+     |    |- vendor
+     |- site
+```
+
+* Browse to the root folder of your project.
+* Open the zip file and extract the content of the folder `bootstrap-5.3.3\scss` including subfolders to the folder `src\vendor\bootstrap\scss`.
+* Unzip the subfolders of the folder `bootstrap-5.3.3\js\src` to the folder `src\vendor\bootstrap\js`.
+* Unzip the file `bootstrap-5.3.3\js\index.umd.js` to the folder `src\vendor\bootstrap\js`
+
+## Installation Bootstrap icons
+
+Get the zip file from [Github - twbs/icons](https://github.com/twbs/icons/).
+
+```
+│- icons-main
+     |- build
+     |- docs
+     |- font
+     |    |- fonts
+     |- icons
+```
+
+We have different choices to use these fonts:
+
+### Use the font files
+* Open the zip file and extract the two files of the folder `icons-main\font\fonts` to the folder `dist\assets\fonts`
+* Extract the file `icons-main\font\bootstrap-icons.scss` to the folder `src\vendor\bootstrap.icons`
+* Unzip the content of the folder `icons-main` to the folder `src\vendor\bootstrap.icons`.
+
+__-- More instructions will follow soon. --__
+
+### Installation Font Awesome
+
+Get the zip file from [Font Awesome](https://fontawesome.com/download/). We use the Version *Free For Web*.
+
+```
+│- fontawesome-free-6.5.2-web
+     |- css
+     |- js
+     |- less
+     |- metadata
+     |- scss
+     |- sprites
+     |- svgs
+     |- webfonts
+```
+
+### Use the font files
+* Open the zip file and extract the files of the folder `icons-main\font\fonts` to the folder `dist\assets\fonts`
+
+__-- More instructions will follow soon. --__
+
+## Getting Started with compiling
 Note: I don't use *Gulp* nor *Grunt*. I prefer the fast and direct way for the compiling process using *npm* only. This is the same way as Bootstrap goes and an easy way to get the configuration from there. 
 
-Without changing anything, we could compile a valid an working css file right now.
+Without changing anything, we could compile a valid and working css file right now.
 
 To do this, we will use these scripts defined in the file `package.json`:
 
@@ -128,7 +229,7 @@ To do this, we will use these scripts defined in the file `package.json`:
   }
 ```
 
-My configuration does not support *source maps* for CSS and for JavaScript. If you want source maps, then replace the following lines with this:
+My personal configuration does not support *source maps* for CSS and for JavaScript. If you want source maps, then replace the affected lines with this:
 
 ```json
 "scripts": {
@@ -181,48 +282,6 @@ The destination path of the compiled JavaScript file has changed from the relati
 
 To avoid a bloated JavaScript file, not used scripts for certain components can be disabled. To make this possible i copyied the file `src/vendor/bootstrap/js/index.umd.js` to the folder `src/js`. I commented out all scripts that we don't need. Also the path to the sources were updated to the path `../vendor/bootstrap/js`.
 
-## Directoy structure based on ITCSS
-
-This is the directory structure of the project:
-
-```
-|- build
-│- dist
-|    |- assets
-|    |    |- css
-|    |    |- fonts
-|    |    |- images
-|    |    |    |- favicon
-|    |    |- js
-|- node_modules
-|- src
-     |- js
-     |- scss
-     |    |- components
-     |    |- elements
-     |    |- generic
-     |    |- objects
-     |    |- settings
-     |    |- tools
-     |    |- utilities
-     |- vendor
-          |- bootstrap
-          |   |- build
-          |   |- dist
-          |   |- js
-          |   |- scss
-          |        |- forms
-          |        |- helpers
-          |        |- mixins
-          |        |- tests
-          |        |- utilities
-          |        |- vendor
-          |- bootstrap.icons *
-          |- fontawesome *
-```
-
-\* Not needed. We use the font files or the svg sprites.
-
 ## Links
 
 Node.js:
@@ -255,6 +314,10 @@ BEM Methodology:
 I have used some patterns and photos from here:
 * Free background patterns: [Subtle Pattern](http://subtlepatterns.com) and [DinPattern](http://www.dinpattern.com).
 * Free photos: [Unsplash](https://unsplash.com/) and [Gratisography](http://www.gratisography.com).
+
+Any filler text is from here:
+* Fillerama: [Fillerama](http://fillerama.io/).
+
 
 ## License
 The code is available under the [MIT license](LICENSE.txt).
