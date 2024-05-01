@@ -175,13 +175,13 @@ Next: We copy some files as our editable **working copies**:
 * The file `src\vendor\bootstrap\js\index.umd.js` should be copied to the folder `src\js`
 * The three files of the folder `src\vendor\bootstrap\build` should be copyied to the folder `src\build`
 
-The file `src\build/index.umd.js` contains a list of JS files for the components of Bootstrap.
+The file `src\build\index.umd.js` contains a list of JS files for the components of Bootstrap.
 
-To avoid a bloated JavaScript file, not used scripts for certain components can be disabled. To make this possible a component can be remarked the file `src\build/index.umd.js` . 
+To avoid a bloated JavaScript file, not used scripts for certain components can be disabled. To make this possible a component can be remarked the file `src\build\index.umd.js`. 
 
 * We need to change the path to those JS files: `./src/` needs to be changed to `../vendor/bootstrap/js`.
 
-The file `src\build/banner.mjs` creates a banner which will be placed at the top of the generated js file.
+The file `src\build\banner.mjs` creates a banner which will be placed at the top of the generated js file.
 
 * The path to the package file needs to be changed: `../package.json` goes to `../../package.json`.
 
