@@ -42,7 +42,7 @@ if (BUNDLE) {
 const rollupConfig = {
   input: path.resolve(__dirname, `../js/index.${ESM ? 'esm' : 'umd'}.js`),
   output: {
-    //banner: banner(),
+    banner: banner(),
     file: path.resolve(__dirname, `../../dist/assets/js/${destinationFile}.js`),
     format: ESM ? 'esm' : 'umd',
     globals,
