@@ -18,7 +18,7 @@ A development environment is needed for:
 * Optimizing
 
 ## Creating the directory structure of the project
-For your convenience, i created the batch file `create-folders.cmd` which creates the whole structure.
+For your convenience, i created the batch file `create-folders.cmd` which creates the directory structure.
 Run the batch in **the root folder of your project**.
 This is the directory structure of the project:
 
@@ -33,6 +33,8 @@ This is the directory structure of the project:
 |    |    |- js
 |- node_modules
 |- src
+     |- build
+     |- js
      |- scss
      |    |- components
      |    |- elements
@@ -44,7 +46,6 @@ This is the directory structure of the project:
      |- vendor
           |- bootstrap
           |   |- build
-          |   |- dist
           |   |- js
           |   |- scss
           |        |- forms
@@ -53,8 +54,8 @@ This is the directory structure of the project:
           |        |- tests
           |        |- utilities
           |        |- vendor
-          |- bootstrap.icons *
-          |- fontawesome *
+          |- bootstrap.icons
+          |- fontawesome
 ```
 
 ### Installation Node.js
@@ -136,9 +137,10 @@ The folder `node_modules` will be created and about 41 MB of stuff will be downl
 This installation can be repeated anytime by deleting the folder `node_modules` and running the installation again.
 
 
-## Installation Bootstrap
+## Installation of Bootstrap
 
 Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/download/). We need the *Source files*.
+This is the content of the zip file:
 
 ```
 │- bootstrap-5.3.3
@@ -159,14 +161,36 @@ Get the zip file from [Download - Bootstrap](https://getbootstrap.com/docs/5.3/g
      |- site
 ```
 
+**Golden rule: We never change the content any files in the folder  `src\vendor` and subfolders**
+
 * Browse to the root folder of your project.
 * Open the zip file and extract the content of the folder `bootstrap-5.3.3\scss` including subfolders to the folder `src\vendor\bootstrap\scss`.
 * Unzip the subfolders of the folder `bootstrap-5.3.3\js\src` to the folder `src\vendor\bootstrap\js`.
 * Unzip the file `bootstrap-5.3.3\js\index.umd.js` to the folder `src\vendor\bootstrap\js`
+* Unzip the file `bootstrap-5.3.3\build\banner.mjs` to the folder `src\vendor\bootstrap\build`
+* Unzip the file `bootstrap-5.3.3\build\postcss.config.mjs` to the folder `src\vendor\bootstrap\build`
+* Unzip the file `bootstrap-5.3.3\build\rollup.config.mjs` to the folder `src\vendor\bootstrap\build`
 
-## Installation Bootstrap icons
+Next: We copy some files as our editable **working copies**:
+* The file `src\vendor\bootstrap\js\index.umd.js` should be copied to the folder `src\js`
+* The three files of the folder `src\vendor\bootstrap\build` should be copyied to the folder `src\build`
+
+The file `src\build/index.umd.js` contains a list of JS files for the components of Bootstrap.
+
+To avoid a bloated JavaScript file, not used scripts for certain components can be disabled. To make this possible a component can be remarked the file `src\build/index.umd.js` . 
+
+* We need to change the path to those JS files: `./src/` needs to be changed to `../vendor/bootstrap/js`.
+
+The file `src\build/banner.mjs` creates a banner which will be placed at the top of the generated js file.
+
+* The path to the package file needs to be changed: `../package.json` goes to `../../package.json`.
+
+The file `src\build\rollup.config.mjs` contains the path to the banner file which needs to be changed: `../dist` goes to `../../dist`. If you don't want the banner, remark the line `banner: banner(),`. 
+
+## Installation of Bootstrap icons
 
 Get the zip file from [Github - twbs/icons](https://github.com/twbs/icons/).
+This is the content of the zip file:
 
 ```
 │- icons-main
@@ -186,9 +210,10 @@ We have different choices to use these fonts:
 
 __-- More instructions will follow soon. --__
 
-### Installation Font Awesome
+### Installation of Font Awesome
 
 Get the zip file from [Font Awesome](https://fontawesome.com/download/). We use the Version *Free For Web*.
+This is the content of the zip file:
 
 ```
 │- fontawesome-free-6.5.2-web
@@ -217,11 +242,11 @@ To do this, we will use these scripts defined in the file `package.json`:
 ```json
 "scripts": {
     "css-compile": "sass --style expanded --no-source-map --no-error-css src/scss/main.scss dist/assets/css/main.css",
-    "css-prefix": "postcss --config build/postcss.config.mjs --replace \"dist/assets/css/main.css\"",
+    "css-prefix": "postcss --config src/vendor/bootstrap/build/postcss.config.mjs --replace \"dist/assets/css/main.css\"",
     "css-purge": "purgecss --css dist/assets/css/main.css --content dist/*.html --output dist/assets/css/",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --output dist/assets/css/main.min.css dist/assets/css/main.css",
     "css-lint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
-    "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.mjs",
+    "js-compile-bundle": "rollup --environment BUNDLE:true --config src/build/rollup.config.mjs",
     "js-minify-bundle": "terser --compress passes=2 --mangle --comments \"/^!/\" --output dist/assets/js/bootstrap.bundle.min.js dist/assets/js/bootstrap.bundle.js",
     "make-dev": "npm-run-all css-compile css-prefix",
     "make-dist": "npm-run-all css-compile css-prefix css-minify",
@@ -229,13 +254,13 @@ To do this, we will use these scripts defined in the file `package.json`:
   }
 ```
 
-My personal configuration does not support *source maps* for CSS and for JavaScript. If you want source maps, then replace the affected lines with this:
+The default configuration does not support *source maps* for CSS and for JavaScript. If you want source maps, then replace the affected lines with this:
 
 ```json
 "scripts": {
     "css-compile": "sass --style expanded --source-map --no-error-css src/scss/main.scss dist/assets/css/main.css",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/assets/css/main.min.css dist/assets/css/main.css",
-    "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.mjs --sourcemap",
+    "js-compile-bundle": "rollup --environment BUNDLE:true --config src/build/rollup.config.mjs --sourcemap",
     "js-minify-bundle": "terser --compress passes=2 --mangle --comments \"/^!/\"  --source-map \"content=dist/js/bootstrap.bundle.js.map,includeSources,url=bootstrap.bundle.min.js.map\" --output dist/assets/js/bootstrap.bundle.min.js dist/assets/js/bootstrap.bundle.js",
   }
 ```
@@ -275,12 +300,6 @@ This is the usual running sequence of the jobs:
 or 
 
 > **css-compile > css-prefix > css-purge>**
-
-### Special files
-
-The destination path of the compiled JavaScript file has changed from the relative path `dist/js` to `dist/assets/js`. I copied the file `src/vendor/bootstrap/build/rollup.config.mjs` to the folder `build`. Then i changed the destination path in the file.
-
-To avoid a bloated JavaScript file, not used scripts for certain components can be disabled. To make this possible i copyied the file `src/vendor/bootstrap/js/index.umd.js` to the folder `src/js`. I commented out all scripts that we don't need. Also the path to the sources were updated to the path `../vendor/bootstrap/js`.
 
 ## Links
 
