@@ -41,11 +41,11 @@
   },
   "scripts": {
     "css-compile": "sass --style expanded --no-source-map --no-error-css src/scss/main.scss dist/assets/css/main.css",
-    "css-prefix": "postcss --config build/postcss.config.mjs --replace \"dist/assets/css/main.css\"",
+    "css-prefix": "postcss --config src/vendor/bootstrap/build/postcss.config.mjs --replace \"dist/assets/css/main.css\"",
     "css-purge": "purgecss --css dist/assets/css/main.css --content dist/index.html --output dist/assets/css/",
     "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --output dist/assets/css/main.min.css dist/assets/css/main.css",
     "css-lint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache",
-    "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.mjs",
+    "js-compile-bundle": "rollup --environment BUNDLE:true --config src/build/rollup.config.mjs",
     "js-minify-bundle": "terser --compress passes=2 --mangle --comments \"/^!/\" --output dist/assets/js/bootstrap.bundle.min.js dist/assets/js/bootstrap.bundle.js",
     "make-dev": "npm-run-all css-compile css-prefix",
     "make-dist": "npm-run-all css-compile css-prefix css-minify",
