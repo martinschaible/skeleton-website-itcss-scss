@@ -1,8 +1,7 @@
 # Skeleton for developing websites
-A clean skeleton for developing websites
+A nice and clean skeleton for developing websites
 
 ## Features
-
 * A finely-tuned theme or template.
 * Build with **Bootstrap 5.3.3**, **Bootstrap Icons 1.11.3** or **Font Awesome 6.5.2**.
 * We use **SASS**.
@@ -11,7 +10,6 @@ A clean skeleton for developing websites
 * Optional **BEM Methodology**
 
 ## Documentation
-
 The Documentaton helps you to setup a development environment and much more:
 
 * Installation of node.js
