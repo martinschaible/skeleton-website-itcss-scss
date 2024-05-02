@@ -7,12 +7,17 @@
 **/.DS_Store
 package-lock.json
 
+# Ignore self hosted fonts
+*.svg
+*.ttf
+*.woff
+*.woff2
+
 # Ignore folders
 .cache/
 node_modules/
 
 # Ignore the sources from 3rd party vendors
-dist/assets/fonts
 src/vendor/bootstrap
 src/vendor/bootstrap.icons
 src/vendor/fontawesome
