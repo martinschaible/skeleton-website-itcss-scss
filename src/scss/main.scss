@@ -39,13 +39,9 @@
 @import 'settings/settings.variables.bootstrap';
 @import 'settings/settings.variables.bootstrap-dark';
 
-// Settings - Project related
+// Settings - Project/Theme related
 @import 'settings/settings.variables';
-
-// Settings - Theme related
-// -----------------------------------------------------------------------------
-@import 'settings/settings.variables.theme';
-@import 'settings/settings.variables.theme.dark';
+@import 'settings/settings.variables-dark';
 
 // Settings - Self-Host Fonts
 @import 'settings/settings.font.google.noto-sans';
@@ -55,7 +51,7 @@
 
 // Settings - Self-Host Icons
 //@import 'settings/settings.font.bootstrap.icons';
-//@import 'settings/settings.font.fontawesome';
+@import 'settings/settings.font.fontawesome';
 
 //
 //
@@ -67,7 +63,7 @@
 // -> https://getbootstrap.com/docs/5.3/customize/sass/
 //
 
-// Display the banner at the top of the css file
+// Display the banner at the top in the css file
 @import "../vendor/bootstrap/scss/mixins/banner";
 @include bsBanner("");
 
@@ -77,11 +73,6 @@
 @import '../vendor/bootstrap/scss/maps';
 @import '../vendor/bootstrap/scss/mixins';
 @import '../vendor/bootstrap/scss/utilities';
-
-// Create CSS Custom Properties
-// -----------------------------------------------------------------------------
-//@import 'settings/settings.root.theme.default';
-//@import 'settings/settings.root.theme.dark';
 
 // Layout & Components
 // -----------------------------------------------------------------------------
