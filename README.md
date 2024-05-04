@@ -1,12 +1,12 @@
 # Skeleton for developing websites
-A nice and clean skeleton for developing websites
+A nice and slick skeleton for developing websites
 
 ## Features
-* A finely-tuned theme or template.
+* A fine tuned theme or template.
 * Build with **Bootstrap 5.3.3**, **Bootstrap Icons 1.11.3** or **Font Awesome 6.5.2**.
 * We use **SASS**.
-* Very small footprint of the compiled css and js files. 
-* Fully modular. Easy to maintain by using **ITCSS**
+* Small footprint of the compiled css and js files. 
+* Fully modular and easy to maintain by using **ITCSS**
 * Optional **BEM Methodology**
 
 ## Documentation
