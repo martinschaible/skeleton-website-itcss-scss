@@ -1,4 +1,4 @@
-# Skeleton for developing websites
+# ![Skeleton for developing websites](dist/assets/images/skeleton62x64.png) Skeleton for developing websites
 A nice and slick skeleton for developing websites
 
 ## Features
